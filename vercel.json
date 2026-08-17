@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/:path((?!(?:admin|api)(?:/|$)).*)",
+      "destination": "/api/public-proxy?path=/:path*"
+    }
+  ]
+}
