@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sapala67.id/sitemap.xml

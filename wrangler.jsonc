@@ -1,0 +1,21 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "sapala67",
+	"compatibility_date": "2024-11-01",
+	"compatibility_flags": ["nodejs_compat"],
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "sapala67",
+			"database_id": "a7b58f48-69bb-4c70-a356-5bb84eb5f926",
+			"migrations_dir": "migrations"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "sapala67-media"
+		}
+	]
+}

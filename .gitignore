@@ -1,0 +1,25 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+build
+.svelte-kit
+.wrangler
+.playwright-cli
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example

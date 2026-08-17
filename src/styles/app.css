@@ -1,0 +1,185 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '@fontsource-variable/cinzel';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/cormorant-garamond';
+
+@layer base {
+	:root {
+		--color-sky: #8bcbee;
+		--color-primary: #1b7fbf;
+		--color-deep: #155e8c;
+		--color-ink: #163a5f;
+		--color-earth: #e89a5e;
+		--color-clay: #c2703b;
+		--color-red: #d5232b;
+		--color-sand: #f4e3c8;
+		--color-cream: #fbf5ea;
+	}
+
+	html {
+		scroll-behavior: auto;
+		scroll-padding-top: 5.5rem;
+	}
+
+	body {
+		@apply bg-sapala-cream font-body text-sapala-ink antialiased;
+	}
+
+	::selection {
+		@apply bg-sapala-red/90 text-white;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		@apply bg-sapala-parchment;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply rounded-full bg-sapala-primary/50;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-sapala-primary;
+	}
+}
+
+@layer components {
+	.section-heading {
+		@apply font-heading text-3xl font-bold tracking-wide text-sapala-ink md:text-4xl lg:text-5xl;
+	}
+
+	.section-subheading {
+		@apply mx-auto max-w-2xl font-serif text-lg text-sapala-ink/70 md:text-xl;
+	}
+
+	/* Eyebrow badge above each section title */
+	.eyebrow {
+		@apply inline-flex items-center gap-2 rounded-full border border-sapala-ink/15 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-sapala-primary shadow-sm;
+	}
+
+	.eyebrow-earth {
+		@apply inline-flex items-center gap-2 rounded-full border border-sapala-clay/25 bg-sapala-sand/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-sapala-clay shadow-sm;
+	}
+
+	/* Warm paper card — replaces the old dark glass card */
+	.glass-card {
+		@apply rounded-2xl border border-sapala-ink/10 bg-white/80 shadow-card backdrop-blur-sm;
+	}
+
+	.paper-card {
+		@apply rounded-2xl border border-sapala-ink/10 bg-white shadow-card;
+	}
+
+	.gradient-text {
+		@apply bg-gradient-to-br from-sapala-primary via-sapala-deep to-sapala-ink bg-clip-text text-transparent;
+	}
+
+	/* Vintage emblem ring (double border like the badge) */
+	.emblem-ring {
+		@apply relative rounded-full border-2 border-sapala-ink/70;
+		box-shadow:
+			inset 0 0 0 5px var(--color-cream),
+			inset 0 0 0 7px rgba(22, 58, 95, 0.5);
+	}
+
+	.mountain-divider {
+		@apply h-24 w-full md:h-32;
+		clip-path: polygon(0 100%, 20% 60%, 40% 80%, 60% 40%, 80% 70%, 100% 30%, 100% 100%);
+	}
+
+	.text-shadow-soft {
+		text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
+	}
+
+	/* Primary CTA — deep brand blue */
+	.btn-primary {
+		@apply inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-br from-sapala-primary to-sapala-deep px-6 py-3 font-semibold text-white shadow-lg shadow-sapala-primary/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-sapala-primary/30 active:scale-95;
+	}
+
+	/* Accent CTA — the crimson compass-star red */
+	.btn-accent {
+		@apply inline-flex min-h-12 items-center gap-2 rounded-full bg-sapala-red px-6 py-3 font-semibold text-white shadow-lg shadow-sapala-red/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-sapala-ember hover:shadow-xl hover:shadow-sapala-red/30 active:scale-95;
+	}
+
+	.btn-outline {
+		@apply inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-sapala-ink/25 px-6 py-3 font-semibold text-sapala-ink transition-all duration-300 hover:border-sapala-ink hover:bg-sapala-ink hover:text-white active:scale-95;
+	}
+
+	.hero-kicker {
+		@apply inline-flex items-center gap-2 border border-white/25 bg-white/10 px-3 py-2 text-[10px] font-bold tracking-[0.2em] text-sapala-sky backdrop-blur-sm;
+	}
+
+	.hero-primary {
+		@apply inline-flex min-h-12 items-center gap-2 bg-sapala-earth px-5 py-3 text-sm font-bold text-sapala-inkdeep transition duration-200 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-sapala-inkdeep;
+	}
+
+	.hero-link {
+		@apply inline-flex min-h-12 items-center gap-2 px-3 py-3 text-sm font-semibold text-white transition duration-200 hover:text-sapala-earth focus:outline-none focus:ring-2 focus:ring-white;
+	}
+
+	.goal-label {
+		@apply text-[10px] font-bold uppercase tracking-[0.22em];
+	}
+
+	.goal-shell {
+		@apply grid overflow-hidden rounded-2xl border border-sapala-ink/10 bg-white shadow-lift lg:grid-cols-[.8fr_1.2fr];
+	}
+
+	.goal-compass {
+		@apply relative overflow-hidden bg-sapala-inkdeep p-7 md:p-10;
+	}
+
+	.goal-grid {
+		@apply absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-sapala-sky/20;
+		box-shadow: 0 0 0 48px rgba(139, 203, 238, 0.05), 0 0 0 96px rgba(139, 203, 238, 0.04);
+	}
+
+	.goal-ring {
+		@apply relative grid h-24 w-24 place-items-center rounded-full bg-sapala-inkdeep text-lg font-bold text-white;
+		background: conic-gradient(var(--color-earth) var(--progress), rgba(255,255,255,.15) 0);
+	}
+
+	.goal-ring::before { content: ''; @apply absolute inset-2 rounded-full bg-sapala-inkdeep; }
+	.goal-ring span { @apply relative z-10; }
+	.goal-workspace { @apply p-7 md:p-10; }
+	.goal-choice { @apply min-h-36 rounded-xl border border-sapala-ink/10 p-4 text-left transition duration-200 hover:border-sapala-primary/40 hover:bg-sapala-skysoft/30 focus:outline-none focus:ring-2 focus:ring-sapala-primary; }
+	.goal-choice-active { @apply border-sapala-primary bg-sapala-skysoft/50 shadow-card; }
+	.goal-input { @apply min-h-12 w-full border border-sapala-ink/20 bg-white px-4 text-base text-sapala-ink outline-none transition placeholder:text-sapala-ink/40 focus:border-sapala-primary focus:ring-2 focus:ring-sapala-primary/20; }
+	.goal-check { @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-sapala-ink/25 text-transparent transition duration-200 hover:border-sapala-primary hover:text-sapala-primary focus:outline-none focus:ring-2 focus:ring-sapala-primary; }
+	.goal-done { @apply border-sapala-primary bg-sapala-primary text-white hover:text-white; }
+}
+
+@layer utilities {
+	.animate-delay-100 {
+		animation-delay: 100ms;
+	}
+	.animate-delay-200 {
+		animation-delay: 200ms;
+	}
+	.animate-delay-300 {
+		animation-delay: 300ms;
+	}
+	.animate-delay-400 {
+		animation-delay: 400ms;
+	}
+	.animate-delay-500 {
+		animation-delay: 500ms;
+	}
+	.animate-delay-600 {
+		animation-delay: 600ms;
+	}
+	.animate-delay-700 {
+		animation-delay: 700ms;
+	}
+	.animate-delay-800 {
+		animation-delay: 800ms;
+	}
+	.writing-mode-vertical { writing-mode: vertical-rl; }
+	@media (prefers-reduced-motion: reduce) { *, ::before, ::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+}
